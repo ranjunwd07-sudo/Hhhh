@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babbar Group Official Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts: Cinzel for headings, Inter for body -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        :root {
+            --color-primary: #002D5B; /* Deep Corporate Navy */
+            --color-accent: #C5A028;  /* Refined Gold */
+            --color-bg: #F8FAFC;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-bg);
+            color: #1E293B;
+            scroll-behavior: smooth;
+        }
+
+        .cinzel { font-family: 'Cinzel', serif; }
+
+        .company-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .company-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .flagship-gradient {
+            background: linear-gradient(135deg, #002D5B 0%, #004A8F 100%);
+            color: white;
+        }
+
+        /* Chat window transitions */
+        #chat-window {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: scale(0.9) translateY(20px);
+            opacity: 0;
+            pointer-events: none;
+        }
+        #chat-window.open {
+            transform: scale(1) translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .dot-pulse {
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #CBD5E1;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#002D5B]/95 backdrop-blur-md border-b border-white/10 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 h-16 md:h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center border-2 border-[#C5A028] overflow-hidden shadow-inner">
+                    <img src="https://lh3.googleusercontent.com/u/0/d/1ze1cJXyrOLZggv6cE9a4YI96cXsxUk-B" 
+                         alt="Logo" class="w-full h-full object-contain p-1"
+                         onerror="this.src='https://api.dicebear.com/7.x/initials/svg?seed=BG&backgroundColor=002d5b'">
+                </div>
+                <div>
+                    <h1 class="cinzel text-lg md:text-2xl font-bold text-white tracking-tighter leading-tight">BABBAR GROUP</h1>
+                    <p class="text-[10px] uppercase tracking-widest text-[#C5A028] font-bold">Official Portfolio</p>
+                </div>
+            </div>
+            
+            <nav class="hidden md:flex gap-8 text-sm font-semibold text-white/90">
+                <a href="#about" class="hover:text-[#C5A028] transition">Chairman</a>
+                <a href="#portfolio" class="hover:text-[#C5A028] transition">Ventures</a>
+                <a href="#contact" class="px-5 py-2 bg-[#C5A028] text-[#002D5B] rounded-full hover:bg-white transition shadow-md">Partner with us</a>
+            </nav>
+
+            <button class="md:hidden text-white"><i data-lucide="menu"></i></button>
+        </div>
+    </header>
+
+    <!-- Hero / Chairman Section -->
+    <section id="about" class="pt-32 pb-16 md:pt-48 md:pb-24 px-4 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h3 class="cinzel text-sm md:text-base font-bold text-[#C5A028] mb-4 tracking-[0.3em]">LEADERSHIP</h3>
+            <h2 class="cinzel text-4xl md:text-6xl font-black text-[#002D5B] mb-6 leading-tight">Chairman Mr. Raj Babbar Raj</h2>
+            <div class="w-24 h-1 bg-[#C5A028] mx-auto mb-8 rounded-full"></div>
+            <p class="text-xl md:text-2xl italic text-slate-600 mb-8 leading-relaxed">
+                "We prove by action."
+            </p>
+            <p class="text-slate-500 max-w-2xl mx-auto leading-relaxed text-sm md:text-base">
+                Under the visionary leadership of Mr. Raj Babbar Raj, Babbar Group has emerged as a cornerstone of quality across diverse sectors, prioritizing discipline and social progress.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Portfolio Grid -->
+    <section id="portfolio" class="py-20 px-4 bg-[#F1F5F9]">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                <div>
+                    <h2 class="cinzel text-3xl font-bold text-[#002D5B]">Business Portfolio</h2>
+                    <p class="text-slate-500 mt-2">Diversified excellence across 15+ specialized entities.</p>
+                </div>
+                <div class="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
+                    <span class="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-bold whitespace-nowrap">Education</span>
+                    <span class="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-bold whitespace-nowrap">Healthcare</span>
+                    <span class="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-bold whitespace-nowrap">FMCG</span>
+                    <span class="px-3 py-1 bg-white border border-slate-200 rounded-full text-xs font-bold whitespace-nowrap">Real Estate</span>
+                </div>
+            </div>
+
+            <div id="grid-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Dynamic Content Loading -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Modal Replacement (Expandable Section) -->
+    <div id="focus-area" class="hidden py-16 px-4 bg-white border-y border-slate-100">
+        <div class="max-w-5xl mx-auto">
+            <div id="details-view" class="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border border-slate-100 flex flex-col md:flex-row gap-10 items-center">
+                <!-- Injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 bg-[#002D5B] text-white">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="cinzel text-4xl font-bold mb-6">Connect with <br><span class="text-[#C5A028]">Babbar Group</span></h2>
+                <p class="text-white/70 mb-10 leading-relaxed max-w-md">
+                    Interested in a joint venture, franchise opportunity, or have an inquiry? Our corporate office is ready to assist.
+                </p>
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4 group">
+                        <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center group-hover:bg-[#C5A028] transition">
+                            <i data-lucide="phone"></i>
+                        </div>
+                        <a href="tel:+919065919011" class="text-lg font-semibold hover:text-[#C5A028] transition">+91 9065919011</a>
+                    </div>
+                    <div class="flex items-center gap-4 group">
+                        <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center group-hover:bg-[#C5A028] transition">
+                            <i data-lucide="mail"></i>
+                        </div>
+                        <a href="mailto:ranjunwd07@gmail.com" class="text-lg font-semibold hover:text-[#C5A028] transition break-all">ranjunwd07@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white/5 p-8 rounded-3xl border border-white/10">
+                <h3 class="cinzel text-xl mb-6">Our Core Values</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="check-circle" class="text-[#C5A028] mt-1 shrink-0"></i>
+                        <span><strong>Uncompromising Quality:</strong> Delivering the best in every sector we touch.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="check-circle" class="text-[#C5A028] mt-1 shrink-0"></i>
+                        <span><strong>Integrity:</strong> Building trust through transparent actions.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="check-circle" class="text-[#C5A028] mt-1 shrink-0"></i>
+                        <span><strong>Discipline:</strong> Maintaining rigorous standards in management and service.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chatbot UI -->
+    <div id="ai-chat" class="fixed bottom-6 right-6 z-[100]">
+        <button onclick="toggleChat()" class="w-16 h-16 bg-[#002D5B] rounded-full shadow-2xl flex items-center justify-center border-4 border-[#C5A028] hover:scale-110 active:scale-95 transition-all overflow-hidden relative">
+            <img src="https://lh3.googleusercontent.com/u/0/d/1ze1cJXyrOLZggv6cE9a4YI96cXsxUk-B" class="w-full h-full object-contain p-1" alt="AI">
+            <div class="absolute -top-1 -right-1 w-5 h-5 bg-green-500 border-2 border-white rounded-full"></div>
+        </button>
+
+        <div id="chat-window" class="absolute bottom-20 right-0 w-[90vw] md:w-96 max-h-[70vh] flex flex-col bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden">
+            <div class="p-4 bg-[#002D5B] text-white flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-white rounded-full overflow-hidden">
+                        <img src="https://lh3.googleusercontent.com/u/0/d/1ze1cJXyrOLZggv6cE9a4YI96cXsxUk-B" class="w-full h-full object-contain" alt="Logo">
+                    </div>
+                    <div>
+                        <p class="cinzel text-xs font-bold leading-none mb-1">Babbar Support</p>
+                        <p class="text-[10px] text-green-400 font-bold flex items-center gap-1">
+                            <span class="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></span> ONLINE
+                        </p>
+                    </div>
+                </div>
+                <button onclick="toggleChat()" class="text-white/70 hover:text-white"><i data-lucide="x"></i></button>
+            </div>
+            
+            <div id="chat-content" class="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50 custom-scrollbar h-80">
+                <div class="flex justify-start">
+                    <div class="bg-white border border-slate-200 p-3 rounded-2xl rounded-tl-none text-sm shadow-sm max-w-[85%]">
+                        Hello. I am the Babbar Group AI Concierge. How can I help you navigate our flagship educational institutes or other ventures today?
+                    </div>
+                </div>
+            </div>
+
+            <div id="typing" class="hidden px-4 pb-2">
+                <div class="flex gap-1">
+                    <div class="w-1.5 h-1.5 bg-[#C5A028] rounded-full dot-pulse"></div>
+                    <div class="w-1.5 h-1.5 bg-[#C5A028] rounded-full dot-pulse" style="animation-delay: 0.2s"></div>
+                    <div class="w-1.5 h-1.5 bg-[#C5A028] rounded-full dot-pulse" style="animation-delay: 0.4s"></div>
+                </div>
+            </div>
+
+            <div class="p-4 bg-white border-t border-slate-100 flex gap-2">
+                <input id="user-input" type="text" placeholder="Type your inquiry..." class="flex-1 bg-slate-100 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#C5A028]/50 transition">
+                <button onclick="handleSend()" class="w-12 h-12 bg-[#002D5B] text-[#C5A028] rounded-xl flex items-center justify-center shadow-md active:scale-95 transition">
+                    <i data-lucide="send-horizontal"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-slate-900 text-slate-500 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex justify-center mb-6">
+                 <img src="https://lh3.googleusercontent.com/u/0/d/1ze1cJXyrOLZggv6cE9a4YI96cXsxUk-B" alt="Logo" class="h-10 opacity-50 grayscale invert">
+            </div>
+            <p class="cinzel text-sm font-bold tracking-widest mb-4">THE BABBAR GROUP CONGLOMERATE</p>
+            <p class="text-[10px] uppercase mb-8">Quality & Discipline since inception</p>
+            <div class="flex justify-center gap-6 mb-8 text-white/50">
+                <a href="#"><i data-lucide="facebook"></i></a>
+                <a href="#"><i data-lucide="youtube"></i></a>
+                <a href="#"><i data-lucide="instagram"></i></a>
+            </div>
+            <p class="text-xs">&copy; 2025 Babbar Group. All rights reserved. | "We prove by action."</p>
+        </div>
+    </footer>
+
+    <script>
+        // Constants & Data
+        const apiKey = "";
+        const ALLIANCE_WEBSITE = "https://dayalshankar36925-bit.github.io/Alliance-career-institute-Babbar-education-/#home";
+        const RAJESHWARI_PDF = "https://drive.google.com/file/d/1C8ruwHDRWBAkwRUSUzRtflrT67pAgv7v/view?usp=drivesdk";
+
+        const entities = [
+            { 
+                id: 'alliance',
+                name: "ALLIANCE CAREER INSTITUTE", 
+                category: "Education - Flagship", 
+                desc: "Premier competitive exam coaching and comprehensive career guidance academy.",
+                longDesc: "Alliance Career Institute is the crown jewel of Babbar Group's educational vertical. We specialize in engineering, medical, and administrative entrance exams, fostering excellence through disciplined study and expert pedagogy.",
+                action: { label: "Visit Official Portal", url: ALLIANCE_WEBSITE },
+                icon: "graduation-cap",
+                flagship: true
+            },
+            { 
+                id: 'rajeshwari',
+                name: "RAJESHWARI COLLEGE OF EDUCATION", 
+                category: "Education", 
+                desc: "Higher education institution dedicated to teacher training and pedagogy.",
+                longDesc: "Shaping the next generation of educators, Rajeshwari College offers specialized B.Ed and pedagogical programs focused on modern teaching methodologies and liberal arts.",
+                action: { label: "Download Prospectus (PDF)", url: RAJESHWARI_PDF },
+                icon: "book-open"
+            },
+            { 
+                id: 'harvard',
+                name: "HARVARD ENGLISH SCHOOL", 
+                category: "Education", 
+                desc: "Global standard primary and secondary education with English-centric curriculum.",
+                longDesc: "Focused on global fluency and critical thinking, Harvard English School provides a world-class K-12 environment rooted in quality and discipline.",
+                action: { label: "Learn More", url: "#contact" },
+                icon: "languages"
+            },
+            { 
+                id: 'flour',
+                name: "RAJSHREE FLOUR", 
+                category: "FMCG", 
+                desc: "High-grade wheat flour processed with cutting-edge technology for purity.",
+                longDesc: "Rajshree Flour ensures every household receives nutritious, clean, and high-quality wheat products, upholding our promise of quality in the food sector.",
+                action: { label: "Contact Sales", url: "#contact" },
+                icon: "wheat"
+            },
+            { 
+                id: 'oil',
+                name: "GOLDLIFE EDIBLE OIL", 
+                category: "FMCG", 
+                desc: "Healthy cooking oils derived from natural, cold-pressed ingredients.",
+                longDesc: "Goldlife Edible Oil focuses on heart-health and purity, processing oil seeds in state-of-the-art facilities.",
+                action: { label: "Contact Sales", url: "#contact" },
+                icon: "droplet"
+            },
+            { 
+                id: 'rice',
+                name: "RAINANDANI RICE", 
+                category: "FMCG", 
+                desc: "Selection of aromatic Basmati and premium grain varieties.",
+                longDesc: "Finest quality long-grain rice exported and distributed across major retail hubs, maintaining traditional taste with modern packaging.",
+                action: { label: "Contact Sales", url: "#contact" },
+                icon: "package-check"
+            },
+            { 
+                id: 'sumangal',
+                name: "SUMANGALM GAS AGENCY", 
+                category: "Energy", 
+                desc: "LPG distribution ensuring safe and timely energy for homes and industries.",
+                longDesc: "A trusted energy partner for thousands, Sumangalm Gas provides efficient delivery networks for domestic and commercial LPG needs.",
+                action: { label: "Request Connection", url: "#contact" },
+                icon: "flame"
+            },
+            { 
+                id: 'fuel',
+                name: "RAHGIR FUEL STATION", 
+                category: "Energy", 
+                desc: "Strategically located multi-fuel convenience hubs for travelers.",
+                longDesc: "24/7 high-speed fuel dispensing and modern convenience stores across major highways, ensuring travelers always have a reliable stop.",
+                action: { label: "Find Locations", url: "#contact" },
+                icon: "fuel"
+            },
+            { 
+                id: 'vidhyut',
+                name: "VIDHYUT TRANSMISSION", 
+                category: "Infrastructure", 
+                desc: "Powering regional growth through electrical infrastructure development.",
+                longDesc: "High-voltage transmission line installation and substation management, contributing to the nation's energy security.",
+                action: { label: "Contracting Details", url: "#contact" },
+                icon: "zap"
+            },
+            { 
+                id: 'vedic',
+                name: "VEDIC HOSPITAL", 
+                category: "Healthcare", 
+                desc: "Integrated wellness center combining modern diagnostics with Ayurveda.",
+                longDesc: "Vedic Hospital offers a holistic approach to healing, bridging the gap between ancient wisdom and modern clinical precision.",
+                action: { label: "Book Consultation", url: "#contact" },
+                icon: "heart-pulse"
+            },
+            { 
+                id: 'arogya',
+                name: "AROGYA HOSPITAL", 
+                category: "Healthcare", 
+                desc: "Advanced multi-specialty surgical and diagnostic center.",
+                longDesc: "Specializing in emergency care and modern surgery, Arogya Hospital is equipped with the latest medical technology.",
+                action: { label: "Inquire Services", url: "#contact" },
+                icon: "stethoscope"
+            },
+            { 
+                id: 'swastik',
+                name: "SWASTIK HOSPITAL", 
+                category: "Healthcare", 
+                desc: "Community healthcare facility focused on primary and pediatric care.",
+                longDesc: "Reliable family medicine and maternal health services located in urban centers for easy accessibility.",
+                action: { label: "Learn More", url: "#contact" },
+                icon: "activity"
+            },
+            { 
+                id: 'resonance',
+                name: "RESONANCE COMMERCIAL", 
+                category: "Real Estate", 
+                desc: "Premium A-grade office spaces and commercial complexes.",
+                longDesc: "Designing the skylines of tomorrow, Resonance Commercial develops sustainable and high-tech office environments.",
+                action: { label: "Leasing Inquiries", url: "#contact" },
+                icon: "building-2"
+            },
+            { 
+                id: 'hamper',
+                name: "HAMPER SPECIAL PURPOSE", 
+                category: "Real Estate", 
+                desc: "Logistics and special industrial infrastructure projects.",
+                longDesc: "Warehousing, cold storage, and specialized industrial parks tailored for large-scale operations.",
+                action: { label: "Project Details", url: "#contact" },
+                icon: "warehouse"
+            },
+            { 
+                id: 'sugun',
+                name: "SUGUN RESIDENTIAL", 
+                category: "Real Estate", 
+                desc: "Luxury and affordable housing projects for modern living.",
+                longDesc: "Sugun Residential focus on community, safety, and modern amenities in every housing society we develop.",
+                action: { label: "View Listings", url: "#contact" },
+                icon: "home"
+            }
+        ];
+
+        // UI Logic
+        function renderGrid() {
+            const container = document.getElementById('grid-container');
+            container.innerHTML = entities.map((e, idx) => `
+                <div onclick="showDetail('${e.id}')" class="company-card group cursor-pointer bg-white rounded-3xl p-6 md:p-8 border border-slate-200 shadow-sm ${e.flagship ? 'flagship-gradient lg:col-span-2' : ''}">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-14 h-14 ${e.flagship ? 'bg-white text-[#002D5B]' : 'bg-[#002D5B] text-[#C5A028]'} rounded-2xl flex items-center justify-center shadow-lg transition-transform group-hover:scale-110">
+                            <i data-lucide="${e.icon}" class="w-7 h-7"></i>
+                        </div>
+                        <span class="text-[10px] font-bold uppercase tracking-widest px-3 py-1 ${e.flagship ? 'bg-[#C5A028] text-[#002D5B]' : 'bg-slate-100 text-slate-500'} rounded-full">${e.category}</span>
+                    </div>
+                    <h3 class="cinzel text-xl md:text-2xl font-bold mb-3 ${e.flagship ? 'text-white' : 'text-[#002D5B]'} group-hover:text-[#C5A028] transition-colors">${e.name}</h3>
+                    <p class="${e.flagship ? 'text-white/80' : 'text-slate-500'} text-sm leading-relaxed mb-6">${e.desc}</p>
+                    <div class="flex items-center gap-2 font-bold text-xs uppercase tracking-widest ${e.flagship ? 'text-[#C5A028]' : 'text-[#002D5B] group-hover:translate-x-2'} transition-transform">
+                        Explore Venture <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </div>
+                </div>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        function showDetail(id) {
+            const e = entities.find(item => item.id === id);
+            const focus = document.getElementById('focus-area');
+            const details = document.getElementById('details-view');
+
+            details.innerHTML = `
+                <div class="md:w-1/3">
+                    <div class="w-24 h-24 bg-[#002D5B] text-[#C5A028] rounded-3xl flex items-center justify-center shadow-xl mb-6">
+                        <i data-lucide="${e.icon}" class="w-12 h-12"></i>
+                    </div>
+                    <span class="cinzel text-xs font-bold text-[#C5A028] tracking-widest">${e.category}</span>
+                    <h2 class="cinzel text-3xl font-bold text-[#002D5B] mt-2 leading-tight">${e.name}</h2>
+                </div>
+                <div class="md:w-2/3 border-l-0 md:border-l border-slate-200 md:pl-10">
+                    <p class="text-slate-600 text-lg leading-relaxed mb-8">${e.longDesc}</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="${e.action.url}" target="${e.action.url.startsWith('http') ? '_blank' : '_self'}" 
+                           class="px-8 py-4 bg-[#002D5B] text-[#C5A028] cinzel font-bold rounded-xl shadow-lg hover:bg-[#C5A028] hover:text-[#002D5B] transition-all">
+                            ${e.action.label}
+                        </a>
+                        <button onclick="document.getElementById('focus-area').classList.add('hidden')" class="px-8 py-4 border-2 border-slate-200 text-slate-500 cinzel font-bold rounded-xl hover:bg-slate-50 transition-all">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            focus.classList.remove('hidden');
+            focus.scrollIntoView({ behavior: 'smooth' });
+            lucide.createIcons();
+        }
+
+        // AI Chat Logic
+        function toggleChat() {
+            document.getElementById('chat-window').classList.toggle('open');
+        }
+
+        function appendMsg(sender, text) {
+            const content = document.getElementById('chat-content');
+            const div = document.createElement('div');
+            div.className = `flex ${sender === 'user' ? 'justify-end' : 'justify-start'}`;
+            div.innerHTML = `
+                <div class="${sender === 'user' ? 'bg-[#002D5B] text-white rounded-tr-none' : 'bg-white border border-slate-200 rounded-tl-none'} p-3 rounded-2xl text-sm shadow-sm max-w-[85%]">
+                    ${text}
+                </div>
+            `;
+            content.appendChild(div);
+            content.scrollTop = content.scrollHeight;
+        }
+
+        async function callGemini(query) {
+            const sys = `You are the Babbar Group AI Assistant. 
+            Chairman: Mr. Raj Babbar Raj. 
+            Slogan: "We prove by action." 
+            Core Values: Quality and Discipline.
+            Ventures: ${entities.map(e => e.name).join(', ')}.
+            Alliance Career Institute is flagship (${ALLIANCE_WEBSITE}).
+            Rajeshwari College PDF: ${RAJESHWARI_PDF}.
+            Contact: +91 9065919011, ranjunwd07@gmail.com.
+            Tone: Professional, regal, concise. If they ask for the college info, mention the PDF specifically.`;
+
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+            
+            // Exponential backoff logic
+            for (let i = 0, delay = 1000; i < 5; i++, delay *= 2) {
+                try {
+                    const res = await fetch(url, {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json'},
+                        body: JSON.stringify({
+                            contents: [{ parts: [{ text: query }] }],
+                            systemInstruction: { parts: [{ text: sys }] }
+                        })
+                    });
+                    if (!res.ok) throw new Error('API Error');
+                    const data = await res.json();
+                    return data.candidates?.[0]?.content?.parts?.[0]?.text;
+                } catch (e) {
+                    if (i === 4) return "I'm experiencing a high volume of inquiries. Please contact our support team at +91 9065919011.";
+                    await new Promise(r => setTimeout(r, delay));
+                }
+            }
+        }
+
+        async function handleSend() {
+            const input = document.getElementById('user-input');
+            const text = input.value.trim();
+            if (!text) return;
+
+            appendMsg('user', text);
+            input.value = '';
+            
+            const typing = document.getElementById('typing');
+            typing.classList.remove('hidden');
+
+            const reply = await callGemini(text);
+            typing.classList.add('hidden');
+            appendMsg('ai', reply);
+        }
+
+        // Init
+        window.onload = () => {
+            renderGrid();
+            document.getElementById('user-input').addEventListener('keypress', e => {
+                if(e.key === 'Enter') handleSend();
+            });
+        };
+    </script>
+</body>
+</html>
+
